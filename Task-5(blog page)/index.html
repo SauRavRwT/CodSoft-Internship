@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
     <title>Blogs</title>
@@ -19,103 +20,107 @@
     </div>
     <div class="container mt-2">
         <h1 class="lead text-center display-1 fw-bolder my-5">Blog page</h1>
-        <div class="card">
-            <div class="card-body">
-                <div class="container p-3 d-flex justify-content-center gap-3">
-                    <!-- Search Box -->
-                    <input class="w-25" type="text" id="searchInput" placeholder="Search...">
-                    <button class="btn btn-sm btn-outline-success" onclick="search()">Search</button>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill" data-bs-toggle="modal"
-                        data-bs-target="#signinfb" id="signup">click me</button>
-                    <p class="text-center my-auto" id="user_para"></p>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="signinfb" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="main p-5">
-                                    <div
-                                        class="signup d-grid justify-content-center align-content-center align-items-center flex-column flex-wrap gap-3">
-                                        <h2 class="lead" for="chk" aria-hidden="true">Welcome to my Blog.</h2>
-                                        <input class="form-control" type="email" name="email" id="email"
-                                            placeholder="Email" required="">
-                                        <input class="form-control" type="password" name="pswd" id="password"
-                                            placeholder="Password" required="">
-                                        <button class="btn btn-sm btn-outline-primary" onclick="signUp()"
-                                            id="signUp">Sign up</button>
-                                        <button class="btn btn-sm btn-outline-success" onclick="signIn()"
-                                            id="signIp">Sign in</button>
-                                        <button class="btn btn-sm btn-outline-danger" onclick="signOut()"
-                                            id="signOut">Sign out</button>
-                                    </div>
+        <div class="container d-flex justify-content-center gap-3 p-3 row">
+            <div class="col container">
+                <!-- Search Box -->
+                <input class="w-50" type="text" id="searchInput" placeholder="Search...">
+                <button class="btn btn-sm btn-outline-success rounded-pill" onclick="search()">Search</button>
+                <!-- Search Results -->
+                <div class="col" id="searchResults">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary rounded-pill"
+                    data-bs-toggle="modal" data-bs-target="#signinfb">ufff</button>
+                <!-- Modal -->
+                <div class="modal fade" id="signinfb" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="main p-5">
+                                <div
+                                    class="signup d-grid justify-content-center align-content-center align-items-center flex-column flex-wrap gap-3">
+                                    <h2 class="lead" for="chk" aria-hidden="true">Welcome to my Blog.</h2>
+                                    <input class="form-control" type="email" name="email" id="email" placeholder="Email"
+                                        required="">
+                                    <input class="form-control" type="password" name="pswd" id="password"
+                                        placeholder="Password" required="">
+                                    <button class="btn btn-sm btn-outline-primary" onclick="signUp()" id="signUp">Sign
+                                        up</button>
+                                    <button class="btn btn-sm btn-outline-success" onclick="signIn()" id="signIp">Sign
+                                        in</button>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="signOut()" id="signOut">Sign
+                                        out</button>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
-                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="container p-3 d-flex justify-content-center gap-3">
+                        <p class="text-center my-auto" id="user_para"></p>
 
-                <!-- Search Results -->
-                <div id="searchResults">
-                    <!-- Search results will be displayed here -->
-                </div>
-                <form id="post-form">
-                    <textarea id="post" class="form-control" placeholder="What's on your mind..."></textarea>
-                    <input type="file" class="form-control" id="image" accept="images/*">
-                    <div class="text-center p-5">
-                        <button type="button" class="btn btn-outline-success" onclick="upload()">Upload</button>
                     </div>
+                    <form id="post-form">
+                        <textarea id="post" class="form-control" placeholder="What's on your mind..."></textarea>
+                        <input type="file" class="form-control" id="image" accept="images/*">
+                        <div class="text-center p-5">
+                            <button type="button" class="btn btn-outline-success" onclick="upload()">Upload</button>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
+
+            </div>
+            <div class="gallery" id="posts">
+
             </div>
 
         </div>
-        <div class="gallery" id="posts">
 
-        </div>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyBCD2ci6ehBGSyyBek3q21gZGLKcNVbsBU",
-            authDomain: "blog-5086f.firebaseapp.com",
-            databaseURL: "https://blog-5086f-default-rtdb.firebaseio.com",
-            projectId: "blog-5086f",
-            storageBucket: "blog-5086f.appspot.com",
-            messagingSenderId: "106027956869",
-            appId: "1:106027956869:web:29f702a88ebe75099847ec",
-            measurementId: "G-XVNGHQ3BRY"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBCD2ci6ehBGSyyBek3q21gZGLKcNVbsBU",
+                authDomain: "blog-5086f.firebaseapp.com",
+                databaseURL: "https://blog-5086f-default-rtdb.firebaseio.com",
+                projectId: "blog-5086f",
+                storageBucket: "blog-5086f.appspot.com",
+                messagingSenderId: "106027956869",
+                appId: "1:106027956869:web:29f702a88ebe75099847ec",
+                measurementId: "G-XVNGHQ3BRY"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-        crossorigin="anonymous"></script>
-    <script src="./index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+            crossorigin="anonymous"></script>
+        <script src="./index.js"></script>
 </body>
 
 </html>

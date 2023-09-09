@@ -107,15 +107,12 @@ function signIn() {
   var password = document.getElementById("password");
   const promise = auth.signInWithEmailAndPassword(email.value, password.value);
   promise.catch(e => alert(e.message));
-  // window.location = "./index.html";
 }
-
 
 //signOut
 function signOut() {
   auth.signOut();
   alert("You'r SignOut");
-  // window.location = "./active.html";
 }
 
 //active user to homepage
@@ -123,7 +120,6 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     var email = user.email;
     alert(email);
-    // window.location = "./Web Collection.html";
   } else {
     // alert("Error No user is there")
   }

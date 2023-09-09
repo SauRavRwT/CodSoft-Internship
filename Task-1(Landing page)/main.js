@@ -55,3 +55,49 @@ window.onload = function() {
   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff} ";
   document.body.appendChild(css);
 };
+
+/* Feedback form from firebase */
+const firebaseConfig = {
+  //   firebase config informations
+  apiKey: "AIzaSyDjs_Gr6PX-LuHldy_hwrLqQSvE2JmJ0yI",
+  authDomain: "contactform-6997f.firebaseapp.com",
+  databaseURL: "https://contactform-6997f-default-rtdb.firebaseio.com",
+  projectId: "contactform-6997f",
+  storageBucket: "contactform-6997f.appspot.com",
+  messagingSenderId: "167892845994",
+  appId: "1:167892845994:web:2d27f6d5cf773bd32657d3"
+};
+
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
+
+var contactFormDB = firebase.database().ref("contactForm");
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+  var emailid = getElementVal("emailid");
+  var msgContent = getElementVal("msgContent");
+
+  saveMessages(name, emailid, msgContent);
+
+  //   reset the form
+  document.getElementById("contactForm").reset();
+}
+
+const saveMessages = (name, emailid, msgContent) => {
+  var newContactForm = contactFormDB.push();
+
+  newContactForm.set({
+    name: name,
+    emailid: emailid,
+    msgContent: msgContent,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
