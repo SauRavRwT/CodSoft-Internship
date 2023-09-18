@@ -34,25 +34,25 @@ This landing page is created using Bootstrap 5 with a Firebase backend, specific
 
 Once the layout is designed using Figma, it can be implemented using HTML, CSS, and JS. This will provide basic details about me, such as name, age, and occupation. The layout will be designed in a visually appealing manner, utilizing HTML for the structure, CSS for styling, and JS for any interactive elements. This combination of technologies will allow for a dynamic and user-friendly layout that effectively showcases your personal information.
 
-![Task-3(Calculator)](images/t1.png)
+![Task-2(Portfolio)](images/t1.png)
 
 **•** [**Task-3(Calculator)**](https://github.com/SauRavRwT/CodSoft-Internship/tree/main/Task-3(Calculator))
 
 This Calculator is created using Bootstrap 5 with a vanilla js. Does basic calculations like Addition, Subtraction, Multiplication, and Division operations.
 
-![Task-4(Tribute page)](images/t2.png)
+![Task-3(Calculator)](images/t2.png)
 
 **•** [**Task-4(Tribute page)**](https://github.com/SauRavRwT/CodSoft-Internship/tree/main/Task-4(Tribute%20page))
 
 This tribute page is created using Bootstrap 5 with basic knowledge of HTML and CSS.
 
-![Task-5(Blog page)](images/t3.png)
+![Task-4(Tribute page)](images/t3.png)
 
 **•** [**Task-5(blog page)**](https://github.com/SauRavRwT/CodSoft-Internship/tree/main/Task-5(blog%20page))
 
 The layout of this blog page is designed using Bootstrap 5. It incorporates a Firebase authorization system, allowing users to log in and access the content. Additionally, the page utilizes realtime data from Firebase, enabling dynamic updates and interactions with the blog content.    
 
-![Task-1(Landing page)](images/t4.png)
+![Task-5(blog page)](images/t4.png)
 
 
 <!-- Ways to reach me -->
