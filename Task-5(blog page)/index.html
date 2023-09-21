@@ -31,8 +31,10 @@
                 </div>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary rounded-pill"
-                    data-bs-toggle="modal" data-bs-target="#signinfb">sign</button>
+                <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal"
+                    data-bs-target="#signinfb">Sign in</button>
+                <button class="btn btn-danger rounded-pill" onclick="signOut()" id="signOut">Sign
+                    out</button>
                 <!-- Modal -->
                 <div class="modal fade" id="signinfb" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -50,8 +52,6 @@
                                         up</button>
                                     <button class="btn btn-sm btn-outline-success" onclick="signIn()" id="signIp">Sign
                                         in</button>
-                                    <button class="btn btn-sm btn-outline-danger" onclick="signOut()" id="signOut">Sign
-                                        out</button>
                                 </div>
                             </div>
                             <div class="modal-footer">
