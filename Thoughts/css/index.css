@@ -1,0 +1,39 @@
+:root {
+  --card_width: 250px;
+  --row_increment: 10px;
+  --card_border_radius: 16px;
+  --card_small: 26;
+  --card_med: 33;
+  --card_large: 45;
+}
+
+.body {
+  padding: 20px;
+}
+
+.card {
+  /* ease | ease-in | ease-out | linear */
+  transition: transform ease-in-out 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+/* Auto Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #e7f6f2;
+  }
+
+  .card {
+    background: #000;
+    color: #e7f6f2;
+    border: 1px solid #ffffff20;
+  }
+  .card-text {
+    background: #000;
+    color: #e7f6f2;
+  }
+}
